@@ -1,0 +1,65 @@
+<div class="main">
+  <h1>Angular Learn Auth</h1>
+
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="form-control">
+      <label for="user-name">
+        Username:
+      </label>
+      <input
+        type="text"
+        id="user-name"
+        name="user-name"
+        placeholder="Enter your Username"
+        formControlName="userName"
+      >
+      <div
+        class="error-field"
+        *ngIf="loginForm.get('userName')?.invalid && (loginForm.get('userName')?.dirty || loginForm.get('userName')?.touched)"
+      >
+        <small
+          *ngIf="loginForm.get('userName')?.hasError('required')"
+        >
+          This user name field is required.
+        </small>
+      </div>
+    </div>
+
+    <div>
+      <label for="password">
+        Password:
+      </label>
+
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Enter your Password"
+        formControlName="password"
+      >
+
+      <div
+        class="error-field"
+        *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)"
+      >
+        <small
+          *ngIf="loginForm.get('password')?.hasError('required')"
+        >
+          This password field is required.
+        </small>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <button type="submit" [disabled]="!loginForm.valid">
+        Submit
+      </button>
+    </div>
+  </form>
+  <p>Not registered?
+    <a href="#"
+       style="text-decoration: none;">
+      Create an account
+    </a>
+  </p>
+</div>

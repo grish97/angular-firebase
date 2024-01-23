@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "angular-learn-auth",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

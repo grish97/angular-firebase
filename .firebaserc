@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-learn-auth": {
+      "hosting": {
+        "angular-learn-auth": [
+          "angular-learn-auth"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-learn-auth"
+  }
+}
